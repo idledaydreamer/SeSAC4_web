@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>table</title>
+
+        <style>
+            div{
+                width: 300px;
+                height: 150px;
+                display:block;
+                transform: skewY(15deg)
+            }
+            .div1{
+                z-index: 3;
+                position:relative;
+                top: 200px;
+            }
+            .div2{
+                z-index: 2;
+                position: relative;
+                left: 200px;
+            }
+            .div3{
+                z-index: 1;
+                position: absolute;
+                left: 400px;
+                top: 100px;
+            }
+            img{
+                width:300px;
+                height: 180px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="div1"><img src="1.jpeg"></div>
+        <div class="div2"><img src="2.jpeg"></div>
+        <div class="div3"><img src="3.jpeg"></div>
+    </body>
+</html>

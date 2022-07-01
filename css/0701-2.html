@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>table</title>
+
+        <style>
+            div{
+                width:100px;
+                height: 100px;
+                background-color: blue;
+                position: relative;
+                animation-name: myanimation;
+                animation-duration: 3s;
+                animation-timing-function: ease-in;
+                animation-iteration-count: 5;
+            }
+            @keyframes myanimation{
+                0% {left:0px;}
+                25%{left:100px;}
+                50%{left:200px;}
+                75%{left:300px;}
+                100%{left:400px;}
+            }
+            .div2{
+                animation-timing-function: ease-out;
+            }
+            .div3{
+                animation-timing-function: ease-in-out;
+            }
+            
+        </style>
+    </head> 
+    <body>
+        <div></div>
+        <br>
+        <div class="div2"></div>
+        <br>
+        <div class="div3"></div>
+        
+    </body>
+</html>
