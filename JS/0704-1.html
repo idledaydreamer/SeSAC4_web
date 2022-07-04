@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Object</title>
+
+    <script>
+        //Object 자료형
+        var cat = {
+            name: "나비",
+            age: 1,
+            mew: function () {
+                return "야옹";
+            }
+        };
+        console.log(cat);
+        console.log(cat.name);
+        console.log(cat.mew());
+
+        var arr = [1, 2, 3, "야옹", "우왕"];
+        console.log(arr.length);
+        arr.push("유후");
+        console.log(arr);
+        console.log(arr.indexOf(3));
+
+        var me = {
+            name: '이름',
+            birth: '1115',
+        };
+        me['gender'] = 'F';
+        console.log(me['gender']);
+
+
+        //표준객체 - Date, Math
+        var date = new Date();
+        console.log(date);
+
+        console.log(date.getFullYear());
+        console.log(date.getMonth());
+        console.log(date.getDate());
+        console.log(date.getDay());
+        console.log(date.getTime());
+        console.log(date.getHours());
+
+        console.log(Math.min());
+        console.log(Math.min(3, -292, 4, 5));
+        console.log(Math.min(-10, 2, "문자"));
+    </script>
+</head>
+
+<body>
+    <img src="dog.jpg" title="1" width="100" height="100">
+    <img src="dog.jpg" title="2" width="100" height="100">
+    <img src="dog.jpg" title="3" width="100" height="100">
+
+    <div id="div1" class="div1">
+        <input type="text" id="input1" value="값">
+        <button type="button" onclick="submit()">버튼</button>
+
+        <p class="css1">p태그1</p>
+        <p class="css1">p태그2</p>
+        <div>
+            <p class="css1">p태그3</p>
+        </div>
+    </div>
+
+    <script>
+        //DOM
+        console.log(document.getElementsByTagName("img"));
+        console.log(document.getElementById("input1"));
+        console.log(document.querySelectorAll("#div .css1"));
+    </script>
+
+</body>
+
+</html>

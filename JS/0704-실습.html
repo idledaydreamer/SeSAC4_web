@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단계산기 만들기</title>
+    <style>
+        div{
+            margin-block: 3px;
+        }
+        input{
+            margin-left: 5px;
+        }
+    </style>
+    <script>
+        var selValue;
+        var result;
+
+        function search(){
+            var selID = document.getElementById("Selection");
+            var selOption = document.getElementById("Selection").options.selectedIndex;
+            selValue = selID.options[selOption].value;
+        }
+
+        function calculate(){
+            var num1 = Number(document.getElementById("value1").value);
+            var num2 = Number(document.getElementById("value2").value);
+
+            if(num1<num2){
+                var tmp;
+                tmp=num1;
+                num1=num2;
+                num2=tmp;
+            }
+            
+           if (selValue == 1){
+            result = (num1 + num2);
+           } else if (selValue == 2){
+            result = (num1 - num2);
+           } else if (selValue == 3){ 
+            result = (num1 * num2);
+           } else if (selValue ==4) {
+            result = (num1/num2);
+           } else {
+            result = (num1 % num2);
+           }
+            document.getElementById("result").value = result;
+        }
+            //var input = document.getElementById("value1"); 
+            //input.value = "result";
+    </script>
+</head>
+
+
+
+<!-- <input type="text" id="compute"> -->
+<body>
+    <form>
+        <div>값1:</span><input type="text" id="value1"></div>
+        <div>값2:</span><input type="text" id="value2"></div>
+        <div>연산자:
+            <select id="Selection" onmouseout="search();">
+                <option selected disabled hidden>choose</option>
+                <option value="1">+</option>
+                <option value="2">-</option>
+                <option value="3">*</option>
+                <option value="4">/</option>
+                <option value="5">%</option>
+            </select> 
+        </div>    
+        <div>결과: <input Id="result"></div>
+        <br>
+        <button type="button" onclick="calculate();">계산하기</button>
+        <button type="reset">초기화</button>
+    </form>
+   
+</body>
+</html>
