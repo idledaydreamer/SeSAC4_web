@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록 만들기</title>
+
+    <style>
+        span{
+            padding-inline-end: 5px;
+        }
+        form{
+            margin-block: 5px;
+        }
+        input{
+            position:absolute;
+            left: 55px;
+        }
+        table{
+
+        }
+
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <p>방명록입니다.</p>
+    <div>
+        <form>
+            <span>작성자</span>
+            <input type="text" id="작성자"></div>
+            <span><span></span>내용</span>
+            <input type="text" id="내용" style="width:90%"></div>
+            <br><br>
+            <button type="submit" onclick="tb();" >작성</button>
+        </form>
+    </div>
+    <div>
+        <br>
+            <table border="1" cellspacing="1" width="50%">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>작성자</th>
+                        <th>내용</th>
+                        <th>작성일</th>
+                    </tr>
+                </thead>
+            </table>     
+    </div>
+</body>
+</html>
