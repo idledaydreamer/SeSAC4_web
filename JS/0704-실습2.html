@@ -17,29 +17,53 @@
             position:absolute;
             left: 55px;
         }
-        table{
-
-        }
 
     </style>
     <script>
+        var i=1; 
+        function tb(){
+           
+            var name = document.getElementById("name").value;
+            var content = document.getElementById("content").value;
+            
+
+            var tbody = document.getElementById("tbody");
+            var tr = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            td1.innerText=i; i += 1;
+
+            //td1.innerText= document.querySelectorAll("#table tr").length;
+            var td2 = document.createElement("td");
+            td2.innerText= name;
+            var td3 = document.createElement("td");
+            td3.innerText= content;
+            var td4 = document.createElement("td");
+            var date = new Date();
+            td4.innerText= date.getFullYear() + "-" + (date.getMonth()+1) + "-" +(date.getDate()+1) + " " + date.getTime();
+            
+            tbody.appendChild(tr);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            
+        }
     </script>
 </head>
 <body>
     <p>방명록입니다.</p>
     <div>
         <form>
-            <span>작성자</span>
-            <input type="text" id="작성자"></div>
-            <span><span></span>내용</span>
-            <input type="text" id="내용" style="width:90%"></div>
+           <div>작성자 <input type="text" id="name"></div> 
+           <div>내용 <input type="text" id="content" style="width:90%"></div>
             <br><br>
-            <button type="submit" onclick="tb();" >작성</button>
+            <button type="button" onclick="tb();">작성</button>
         </form>
     </div>
+    <br>
     <div>
-        <br>
-            <table border="1" cellspacing="1" width="50%">
+        <table id="table" border="1" cellspacing="1" width="50%" >
                 <thead>
                     <tr>
                         <th>번호</th>
@@ -48,7 +72,8 @@
                         <th>작성일</th>
                     </tr>
                 </thead>
-            </table>     
+                <tbody id="tbody"></tbody>
+        </table>     
     </div>
 </body>
 </html>

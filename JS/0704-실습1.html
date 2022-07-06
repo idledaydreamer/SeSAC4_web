@@ -57,8 +57,12 @@
 <!-- <input type="text" id="compute"> -->
 <body>
     <form>
-        <div>값1:</span><input type="text" id="value1"></div>
-        <div>값2:</span><input type="text" id="value2"></div>
+        <div>값1:</span>
+            <input type="text" id="value1"></div>
+
+        <div>값2:</span>
+            <input type="text" id="value2"></div>
+
         <div>연산자:
             <select id="Selection" onmouseout="search();">
                 <option selected disabled hidden>choose</option>
@@ -69,7 +73,9 @@
                 <option value="5">%</option>
             </select> 
         </div>    
-        <div>결과: <input Id="result"></div>
+        
+        <div>결과: 
+            <input Id="result"></div>
         <br>
         <button type="button" onclick="calculate();">계산하기</button>
         <button type="reset">초기화</button>
