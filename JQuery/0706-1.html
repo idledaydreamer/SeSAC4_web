@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        function setValue(){
+            //document.getElementById("input1").value = "~~~";
+            $("input1").val("setting");
+        }
+        function getValue(){
+            //alert(document.getElementById("input1").value);
+            alert( $("input1").val());
+        }
+        function changeStyle(){
+            //var span = document.querySelector("span");
+            //span.style = "font-size: 20px; color: red;";
+            $("span").css("font-size", "28px");
+            $("span").css("color", "orange");
+        }
+        function changeText(){
+            //var span = document.querySelector("span");
+            //span.innerText = "javascript!";
+            $("span").text("jQuery!");
+        }
+        function changeAttribute(){
+            //var img = document.querySelector("img");
+            //img.width = "100px";
+            $("img").attr("width","100px");
+        }
+        function changeHTML(){
+            // var p = document.querySelector("p");
+            // p.innerText = "<h1>반가워요</h1>";  //태그를 글자로 인식
+            // p.innerHTML = "<h1>반가워요</h1>";  //태그를 태그로 인식
+            $("p").html("<h1>반가워요</h1>");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="input1">
+    <button type="button" onclick="setValue();">setValue</button>
+    <button type="button" onclick="getValue();">getValue</button> 
+    <br>
+    <span>안녕</span>
+
+    <img src="">
+    <button type="button" onclick="changeStyle();">changeStyle</button>
+    
+    <button type="button" onclick="changeText();">changeText</button>
+    <button type="button" onclick="changeAttribute();">changeAttribute</button>
+
+    <p style="background-color: orange;">p태그</p>
+    <button type="button" onclick="changeHTML();">changeHTML</button>
+</body>
+</html>

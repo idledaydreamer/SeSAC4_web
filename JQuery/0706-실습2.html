@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스 바꾸기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="../jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.1.custom/jquery-ui.css">
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+        }
+        div.hover{
+            cursor: pointer;
+        }
+        .default{
+            background-color: silver;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .greenyellow{
+            background-color: greenyellow;
+        }
+        .green{
+            background-color: green;
+        }
+        .mint{
+            background-color: mediumaquamarine;
+        }
+        .sky{
+            background-color: skyblue;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .purple{
+            background-color: purple;
+        }
+        .pale{
+            background-color: palevioletred;
+        }
+        .aqua{
+            background-color: aqua;
+        }
+    </style>
+    <script>
+        function changeColor(){
+            var colors = ['red','orange','yellow','greenyellow','green','mint','sky','blue','purple','pale','aqua'];
+            var color = colors[Math.floor(Math.random()*colors.length)];
+            
+            $("div").switchClass('default',color,500);
+            console.log(color);
+        
+            $("div").removeClass();
+
+            // if (color == 'aqua'){
+            //     $("div").switchClass("aqua","default",500);
+            // }
+
+            // var now = $("div").attr("class");
+            // var i = colors.indexOf(now);
+
+            // if(i == colors.length -1 ){
+            //     $("div").switchClass("aqua","red",300);
+            // }
+            // $("div").switchClass(now,colors[i+1],300);
+        }
+    </script>
+</head>
+<body>
+    <div onclick="changeColor()"></div>
+</body>
+</html>
