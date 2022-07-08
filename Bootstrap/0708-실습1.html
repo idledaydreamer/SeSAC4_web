@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지 만들기</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $("#exampleModal").on('shown.bs.modal', function () {
+
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">학원소개</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            컴퓨터 수업
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">초등학생 코딩</a></li>
+                            <li><a class="dropdown-item" href="#">초등학생 샘플강의</a></li>
+                            <li><a class="dropdown-item" href="#">중고등학생 코딩</a></li>
+                            <li><a class="dropdown-item" href="#">중고등학생 샘플강의</a></li>
+                            <li><a class="dropdown-item" href="#">대학생/전공자 코딩</a></li>
+                            <li><a class="dropdown-item" href="#">회사 실무/자격증 취득</a></li>
+                            <!-- <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            교과 수업
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">홈페이지 만들기</a></li>
+                            <li><a class="dropdown-item" href="#">파이썬 gui</a></li>
+                            <li><a class="dropdown-item" href="#">자바 심화반</a></li>
+                            <li><a class="dropdown-item" href="#">리액트</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Button trigger modal-->
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">오시는 길
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">오시는 길</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            서울특별시 마포구 숭문4길 6 스프레틱스 염리 사옥 3층
+
+                                            <div id="map-canvas" style="height: 600px"></div> 
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script type="text/java script" src="https://maps.googleapis.com/maps/api/js? sensor=true"> 
+</body>
+
+</html>
