@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google clone coding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      nav div {
+        height: 48px;
+      }
+
+      .nav-link {
+        font-size: small;
+        color: black;
+      }
+      .nav-link:hover {
+        color: black;
+      }
+      .nav3-dot {
+        width: 40px;
+        height: 40px;
+        margin-inline: 5px;
+      }
+      .nav3-dot:hover {
+        border-radius: 100%;
+        background-color: rgb(212, 212, 212);
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .header:first-child {
+        min-height: 250px;
+        width: 100%;
+      }
+      .header img {
+        margin: 50px 0px 0px 50px;
+        width: 55%;
+        position: relative;
+        top: 20px;
+      }
+      .search {
+        width: 550px;
+        height: 45px;
+        border-radius: 30px;
+        border: 1px solid rgb(222, 219, 219);
+      }
+      .search:hover {
+        box-shadow: 0px 1px 5px rgb(187, 185, 185);
+      }
+      .search img {
+        width: 20px;
+        height: 20px;
+      }
+      .input {
+        width: 80%;
+        border: none;
+      }
+      input:focus {
+        outline: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav align-items-center">
+      <div
+        class="nav1 ms-0 me-auto p-3 pe-0 d-inline-flex justify-content-start"
+      >
+        <a class="nav-link" href="#">SeSAC 정보</a>
+        <a class="nav-link" href="#">스토어</a>
+      </div>
+
+      <div class="nav2 me-0 p-3 pe-0 ps-3 d-inline-flex justify-content-end">
+        <a class="nav-link" href="#">SAC-mail</a>
+        <a class="nav-link" href="#">이미지</a>
+      </div>
+
+      <div class="nav3 p-3 ps-0 px-100 d-inline-flex justify-content-end">
+        <div class="nav3-dot d-flex justify-content-center align-items-center">
+          <a class="nav-link" href="#"
+            ><img src="nav_dots.png" width="20px"
+          /></a>
+        </div>
+        <div class="nav3-dot d-flex justify-content-center align-items-center">
+          <a class="nav-link" href="#"
+            ><img src="nav_profile.png" width="35px"
+          /></a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="header">
+        <div class="d-flex justify-content-center align-items-end pe-0">
+          <img src="header-removebg-preview.png" />
+        </div>
+
+        <div class="search">
+          <img src="돋보기.png" />
+          <input class="input" type="search" />
+        </div>
+      </div>
+
+      <article></article>
+      <article></article>
+    </main>
+    <footer></footer>
+  </body>
+</html>

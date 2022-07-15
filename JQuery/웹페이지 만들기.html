@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹페이지 만들기</title>
+
+    <script
+      src="./웹페이지 만들기_files/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="./웹페이지 만들기_files/bootstrap.min.css"
+    />
+    <script src="./웹페이지 만들기_files/bootstrap.bundle.min.js"></script>
+
+    <style>
+      .carousel-inner img {
+        object-fit: cover;
+        width: 100%;
+        height: 600px;
+      }
+      .navbar {
+        background-color: navy;
+        color: white;
+      }
+      .nav-item > a {
+        color: white;
+      }
+      .nav-item > a:hover {
+        color: #ffea62;
+      }
+    </style>
+
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3edaae9a39b0259f746a23d527736ee6&libraries=LIBRARY"></script>
+    <script>
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(37.547588, 126.945679), //지도의 중심좌표.
+            level: 2 //지도의 레벨(확대, 축소 정도)
+        };
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        var markerPosition = new kakao.maps.LatLng(37.547588, 126.945679); //마커표시 위치
+        var marker = new kakao.maps.Marker({ position: markerPosition }); //마커 생성
+        marker.setMap(map); //마커 지도 위 표시
+    </script> -->
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                >홈</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                >학원소개</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                컴퓨터 수업
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >초등학생 코딩</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >초등학생 샘플강의</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >중고등학생 코딩</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >중고등학생 샘플강의</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >대학생/전공자 코딩</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >회사 실무/자격증 취득</a
+                  >
+                </li>
+                <!-- <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                교과 수업
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >홈페이지 만들기</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >파이썬 gui</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >자바 심화반</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                    >리액트</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <!-- Button trigger modal-->
+              <a
+                class="nav-link"
+                href="http://127.0.0.1:5500/Bootstrap/0708-%EC%8B%A4%EC%8A%B51.html#"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >오시는 길
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          오시는 길
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        서울특별시 마포구 숭문4길 6 스프레틱스 염리 사옥 3층
+                        <br />
+                        <iframe
+                          src="./웹페이지 만들기_files/embed.html"
+                          width="100%"
+                          height="100%"
+                          style="border: 0"
+                          allowfullscreen=""
+                          loading="lazy"
+                          referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide d-flex justify-content-center"
+      data-bs-ride="true"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./웹페이지 만들기_files/maxresdefault.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./웹페이지 만들기_files/codingon2.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./웹페이지 만들기_files/codingon3.png"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <script
+      type="text/java script"
+      src="./웹페이지 만들기_files/js"
+    ></script>
+  </body>
+</html>
