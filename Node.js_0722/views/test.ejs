@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>EJS test</title>
+	</head>
+	<body>
+		<p><%= a%></p>
+
+		<% for (var i=0; i<5; i++){ %>
+		<p>ejs</p>
+		<% } <% var a = "hello" %> <%=a %> <%- include('test2.ejs') %>
+	</body>
+</html>

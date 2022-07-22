@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>실습29</title>
+		<style>
+			.div1 {
+				width: 100;
+				height: 100;
+				border-radius: 50px;
+			}
+			#div1 {
+				position: static;
+				background-color: #0078ff;
+			}
+			#div2 {
+				position: relative;
+				left: 60px;
+				bottom: 50px;
+				background-color: #0064cd;
+			}
+			#div3 {
+				position: relative;
+				left: 130px;
+				bottom: 120px;
+				background-color: #14148c;
+			}
+			#div4 {
+				position: absolute;
+				left: 210px;
+				top: 100px;
+				background-color: #87afeb;
+			}
+			#div5 {
+				position: fixed;
+				left: 270px;
+				top: 90px;
+				background-color: #057597;
+			}
+
+			.div2 {
+				width: 30;
+				height: 30;
+				border-radius: 15px;
+				position: fixed;
+				top: 30px;
+				left: 35px;
+				background-color: #ffffff;
+			}
+			.div3 {
+				width: 20;
+				height: 20;
+				border-radius: 20px;
+				position: fixed;
+				top: 33px;
+				left: 35px;
+				background-color: #000000;
+			}
+			.div4 {
+				position: fixed;
+				top: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div id="div1" class="div1"></div>
+		<div id="div2" class="div1"></div>
+		<div id="div3" class="div1"></div>
+		<div id="div4" class="div1"></div>
+		<div id="div5" class="div1"></div>
+		<div class="div4"><img src="/static/grass.png" width="400px" /></div>
+	</body>
+</html>

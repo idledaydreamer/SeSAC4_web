@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Google clone coding</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+		<style>
+			nav div {
+				height: 48px;
+			}
+
+			.nav-link {
+				font-size: small;
+				color: black;
+			}
+			.nav-link:hover {
+				color: black;
+			}
+			.nav3-dot {
+				width: 40px;
+				height: 40px;
+				margin-inline: 5px;
+			}
+			.nav3-dot:hover {
+				border-radius: 100%;
+				background-color: rgb(212, 212, 212);
+			}
+			nav a:hover {
+				text-decoration: underline;
+			}
+
+			.header {
+				min-height: 250px;
+				width: 100%;
+			}
+			.header img {
+				margin: 50px 0px 0px 50px;
+				width: 45%;
+				position: relative;
+				top: 20px;
+			}
+			.article1 {
+				width: 550px;
+				height: 45px;
+				border-radius: 30px;
+				border: 1px solid rgb(222, 219, 219);
+			}
+			.article1:hover {
+				box-shadow: 0px 1px 5px rgb(187, 185, 185);
+			}
+			.article1 img {
+				width: 23px;
+				height: 25px;
+			}
+			.input {
+				width: 80%;
+				height: 100%;
+				border-style: none;
+			}
+			.input:focus {
+				outline: none;
+			}
+			.btn {
+				background-color: #edededf2;
+				border-style: none;
+				border-radius: 15px;
+
+				margin-block: 30px;
+				margin-inline-end: 10px;
+				padding: 8px 25px 8px 25px;
+			}
+			.btn:hover {
+				background-color: rgb(173, 186, 186);
+			}
+			.footer {
+				width: 100%;
+				background-color: #e1e1e1;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="nav align-items-center">
+			<div
+				class="nav1 ms-0 me-auto p-1 pe-0 d-inline-flex justify-content-start"
+			>
+				<a class="nav-link" href="#">SeSAC 정보</a>
+				<a class="nav-link" href="#">스토어</a>
+			</div>
+
+			<div class="nav2 me-0 p-1 pe-0 ps-3 d-inline-flex justify-content-end">
+				<a class="nav-link" href="#">SAC-mail</a>
+				<a class="nav-link" href="#">이미지</a>
+			</div>
+
+			<div class="nav3 p-1 ps-0 px-100 d-inline-flex justify-content-end">
+				<div class="nav3-dot d-flex justify-content-center align-items-center">
+					<a class="nav-link" href="#"
+						><img src="/static/nav_dots.png" width="20px"
+					/></a>
+				</div>
+				<div class="nav3-dot d-flex justify-content-center align-items-center">
+					<a class="nav-link" href="#"
+						><img src="/static/nav_profile.png" width="35px"
+					/></a>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<div
+				class="header d-flex justify-content-center align-items-end pe-0 mb-4"
+			>
+				<img src="../static/header-removebg-preview.png" />
+			</div>
+
+			<article>
+				<div
+					class="article0 d-flex justify-content-center align-items-end pe-0 mb-0"
+				>
+					<div
+						class="article1 d-flex justify-content-center align-items-center"
+					>
+						<img src="../static/돋보기.png " />
+						<input class="input ms-4 mt-0" type="search" />
+						<img src="../static/record.png" />
+					</div>
+				</div>
+			</article>
+
+			<article>
+				<div class="article2 position-relative d-flex justify-content-center">
+					<button type="button" class="btn">SeSAC Search</button>
+					<button type="button" class="btn">I'm Feeling Lucky</button>
+				</div>
+			</article>
+		</main>
+
+		<footer>
+			<div class="footer d-block position-absolute bottom-0">
+				<div class="footer1">
+					<span class="d-block ps-4 p-3 align-content-center">South Korea</span>
+					<hr class="m-0" />
+				</div>
+
+				<nav class="footer2">
+					<ul class="nav d-flex justify-content-center">
+						<li class="nav-item">
+							<a class="nav-link" href="#">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Advertising</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link">Business</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link">How Search Works</a>
+						</li>
+					</ul>
+
+					<ul class="nav d-flex justify-content-end">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Privacy</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Terms</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link">Settings</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+	</body>
+</html>
