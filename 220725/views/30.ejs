@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>실습30</title>
+		<script></script>
+	</head>
+
+	<body>
+		<form action="30" method="get">
+			<h3>폼 전송 - 실습</h3>
+			<label>이름 <input type="text" name="name" /></label>
+			<br />
+
+			성별
+			<label><input type="radio" name="gender" value="남자" />남자</label>
+			<label><input type="radio" name="gender" value="여자" />여자</label>
+			<br />
+
+			생년월일
+			<select name="year" id="birth-year">
+				<% for (var i= 1980 ; i<=2022; i++) { %>
+				<option value="<%=i%>"><%=i%></option>
+				<% } %>
+			</select>
+			년
+			<select name="month" id="birth-month">
+				<% for (var i= 1 ; i<=12; i++) { %>
+				<option value="<%=i%>"><%=i%></option>
+				<% } %>
+			</select>
+			월
+			<select name="date" id="birth-date">
+				<% for (var i= 1 ; i<=31; i++) { %>
+				<option value="<%=i%>"><%=i%></option>
+				<% } %>
+			</select>
+			일
+			<br />
+
+			관심사
+			<label><input type="checkbox" name="interest" value="여행" />여행</label>
+			<label><input type="checkbox" name="interest" value="패션" />패션</label>
+			<label><input type="checkbox" name="interest" value="음식" />음식</label>
+			<br />
+
+			<button type="submit">회원가입</button>
+		</form>
+	</body>
+</html>
