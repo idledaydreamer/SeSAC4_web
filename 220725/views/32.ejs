@@ -30,6 +30,9 @@
 			var top = cur.offset().top;
 			var left = cur.offset().left;
 		</script>
+
+
+
 		<style>
 			.progress-container {
 				position: fixed;
@@ -41,59 +44,61 @@
 			}
 			.progress-bar {
 				height: 5px;
-				background: aquamarine;
+				background: rgb(255, 0, 0);
 				width: 0%;
 			}
 
-			html {
+
+
+
+			body {
+
 				background: aquamarine;
 				display: flex;
 				align-items: center;
-			}
-			body {
-				width: 90%;
-				height: 80%;
 
-				margin: 0 auto;
-				align-self: 0 auto;
-				text-align: center;
 
-				background: rgb(255, 255, 255);
-
-				/* display: flex; */
-				justify-content: center;
-				align-items: center;
-			}
+				opacity: 1;
+				transition-duration: 3s;
+				transition-property: opacity;
+			}	
+			body.fade {
+      			opacity: 0;
+   			}
+			
 			.title {
-				position: absolute;
-				left: 0;
-				top: 0;
+
+				
+				/* position: fixed; */
+				
+				/* top: 3%; */
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				/* left: 50%;
+				right: 50%; */
+
 				width: 100%;
-				z-index: 1;
-				line-height: 300px;
+				z-index: 1500;
+				/* line-height: 300px; */
 				text-align: center;
 				transform: translate3d(0, 0, 0);
+
+
 				color: rgb(0, 0, 0);
 				text-transform: uppercase;
 				font-family: 'Playfair Display', serif;
 				letter-spacing: 0.4em;
+
 				font-size: 24px;
-				text-shadow: 0 1px 0 rgba(black, 0.1);
-				text-indent: 0.3em;
+				text-indent: 0.1em;
 			}
-			@keyframes drift {
-				from {
-					transform: rotate(0deg);
-				}
-				from {
-					transform: rotate(360deg);
-				}
-			}
+			
 
 			p.typing-txt {
 				position: relative;
 				font-size: 15px;
-				width: 70px;
+				width: 180px;
 				height: 15px;
 				overflow: hidden;
 				animation: typingAni 3s steps(5, end) 1;
@@ -113,8 +118,14 @@
 				0% {
 					width: 0%;
 				}
-				100% {
+				25% {
 					width: 70px;
+				}
+				50% {
+					width: 150px;
+				}
+				100% {
+					width: 180px;
 				}
 			}
 			@keyframes cursor {
@@ -128,16 +139,39 @@
 					opacity: 0;
 				}
 			}
-			.box {
-				/* width: 300px;
-				height: 300px; */
+
+			.forwave {
+				position: fixed;
 				width: 100%;
 				height: 100%;
-				border-radius: 5px;
-				box-shadow: 0 2px 30px rgba(black, 0.2);
-				background: lighten(#ff5fba, 10%);
+			}
+
+			.box {
+				width: 90%;
+				height: 85%;
+				border-radius: 30px;
+
+
+				margin: 0 auto;
+				align-self: 0 auto;
+				text-align: center;
+/* 
+				background: rgb(255, 255, 255); */
+				background: linear-gradient(rgba(0, 0, 0, 0.914), rgba(127, 255, 212, 0));
+
+				/* display: flex; */
+				justify-content: center;
+				align-items: center;
+			
+				/* background: lighten(#ff5fba, 10%); */
+
 				position: relative;
 				overflow: hidden;
+				transform: translate3d(0, 0, 0);
+			}
+
+			.box:after {
+				z-index: 11;
 				transform: translate3d(0, 0, 0);
 			}
 
@@ -154,15 +188,17 @@
 				height: 300%;
 				margin-left: -250px;
 				margin-top: -250px;
-				/* transform-origin: 50% 48%; */
+				transform-origin: 50% 48%;
 				border-radius: 43%;
 				animation: drift 3000ms infinite linear;
+
+				z-index: -50;
 			}
 
 			.wave.-three {
 				animation: drift 5000ms infinite linear;
 				opacity: 0.3;
-				background: rgb(255, 53, 53);
+				background: rgb(255, 119, 119);
 			}
 
 			.wave.-two {
@@ -170,41 +206,78 @@
 				opacity: 0.6;
 				background: aquamarine;
 			}
-
-			.box:after {
-				content: '';
-				display: block;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				background: linear-gradient(
-					to bottom,
-					rgba(#e8a, 1),
-					rgba(#def, 0) 80%,
-					rgba(white, 0.5)
-				);
-				z-index: 11;
-				transform: translate3d(0, 0, 0);
+			@keyframes drift {
+				from {
+					transform: rotate(0deg);
+				}
+				from {
+					transform: rotate(360deg);
+				}
 			}
 
+
+
+			.form-div {
+				position:absolute;
+				top:-100px;
+				right:0;
+				bottom:0;
+				left:0;
+				
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.form-div * {
+
+				padding: 5px;
+				margin: 5px;
+			}
+			fieldset {
+				border-style: hidden;
+			}
+			legend {
+				font-size: small;
+				font-style: italic;
+				color: rgba(255, 255, 255, 0.598);
+			}
+
+
+			input {
+				z-index: 1000;
+				border-radius: 10px;
+				background-color: rgba(0, 0, 0, 0.554);
+			}
 			select {
 				width: 100px;
+				border-radius: 10px;
+				background-color: rgba(0, 0, 0, 0.554);
+				
 			}
-			.dropdown-menu {
+			input:hover {
+				background-color: rgba(127, 255, 212, 0.532);
+			}
+			select:hover {
+				background-color: rgba(127, 255, 212, 0.532);
+			}
+			/* .dropdown-menu {
 				max-height: 100px;
 				overflow: scroll;
 				overflow-x: hidden;
 				margin-top: 0px;
-			}
+			} */
 
 			button {
 				position: relative;
-				display: block;
+			
 				width: 100px;
 				height: 40px;
+
+				background: linear-gradient(90deg, rgb(38, 242, 174), rgb(232, 255, 139));
+
 				text-align: center;
-				line-height: 40px;
+				line-height: 20px;
 				border: 2px solid #000;
 				text-decoration: none;
 				color: #000;
@@ -306,59 +379,79 @@
 		</style>
 	</head>
 
-	<body>
+	<body class="fade">
 		<div class="progress-container">
 			<div class="progress-bar" id="indicator"></div>
 		</div>
-		<div class="title"><p class="typing-txt">회원가입</p></div>
-		<div class="box">
+
+
+		<div class="forwave">
 			<div class="wave -one"></div>
 			<div class="wave -two"></div>
 			<div class="wave -three"></div>
-
-			<form action="32" method="post">
-				<fieldset>
-					<!-- <legend>필수</legend> -->
-					<input type="text" name="name" placeholder="이름" required /><br />
-					<input type="text" name="id" placeholder="아이디" required /><br />
-					<input type="password" name="pw" placeholder="비밀번호" required />
-				</fieldset>
-				<fieldset>
-					<!-- <legend>선택</legend> -->
-					<input
-						type="tel"
-						name="tel"
-						placeholder="휴대폰번호"
-						required
-					/><br />
-					<input
-						type="email"
-						name="email"
-						placeholder="이메일"
-						required
-					/><br />
-					<select name="year" class="dropdown-menu">
-						<option selected disabled hidden>년</option>
-						<% for (var i= 2022 ; i>=1980; i--) { %>
-						<option value="<%=i%>"><%=i%></option>
-						<% } %>
-					</select>
-					<select name="month" id="birth-month">
-						<option selected disabled hidden>월</option>
-						<% for (var i= 1 ; i<=12; i++) { %>
-						<option value="<%=i%>"><%=i%></option>
-						<% } %>
-					</select>
-					<select name="date" id="birth-date">
-						<option selected disabled hidden>일</option>
-						<% for (var i= 1 ; i<=31; i++) { %>
-						<option value="<%=i%>"><%=i%></option>
-						<% } %>
-					</select>
-				</fieldset>
-				<button type="submit" class="button">가입완료</button>
-				<!-- <button type="submit" class="btn4"><span>가입완료</span></button> -->
-			</form>
 		</div>
+				
+
+			<div class = "box">
+				
+
+
+				<div class="form-div">
+					<form action="32" method="post">
+						<fieldset>
+							<legend>필수</legend>
+							<input type="text" name="name" placeholder="이름" required /><br />
+							<input type="text" name="id" placeholder="아이디" required /><br />
+							<input type="password" name="pw" placeholder="비밀번호" required />
+						</fieldset>
+						<div style="height: 5%;"></div>
+						<fieldset>
+							<legend>선택</legend>
+							<input
+								type="tel"
+								name="tel"
+								placeholder="휴대폰번호"
+								required
+							/><br />
+							<input
+								type="email"
+								name="email"
+								placeholder="이메일"
+								required
+							/><br />
+							<select name="year" class="dropdown-menu">
+								<option selected disabled hidden>년</option>
+								<% for (var i= 2022 ; i>=1980; i--) { %>
+								<option value="<%=i%>"><%=i%></option>
+								<% } %>
+							</select>
+							<select name="month" id="birth-month">
+								<option selected disabled hidden>월</option>
+								<% for (var i= 1 ; i<=12; i++) { %>
+								<option value="<%=i%>"><%=i%></option>
+								<% } %>
+							</select>
+							<select name="date" id="birth-date">
+								<option selected disabled hidden>일</option>
+								<% for (var i= 1 ; i<=31; i++) { %>
+								<option value="<%=i%>"><%=i%></option>
+								<% } %>
+							</select>
+						</fieldset>
+						<div style="height: 5%;"></div>
+						<button type="submit" class="button">가입완료</button>
+						<!-- <button type="submit" class="btn4"><span>가입완료</span></button> -->
+					</form>
+				</div>
+			</div>	<div class="title">
+			<p class="typing-txt">WELCOME</p>
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				window.setTimeout(() => {
+				document.body.classList.remove('fade');
+				});
+			});
+		</script>
 	</body>
 </html>
