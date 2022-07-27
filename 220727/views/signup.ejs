@@ -1,0 +1,327 @@
+<!--* 회원가입 -->
+<html>
+	<head>
+		<title>WELCOME</title>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"
+		></script>
+>
+
+		<script>
+			function sendForm(){
+				const form = document.getElementById('form');
+				const result = form.checkValidity();
+				if (!result) {
+					form.reportValidity();
+					return false;
+				}
+
+				axios({
+					url: 'http://localhost:8000/signup',
+					method: 'post',
+					data: {
+						name: form.name.value,
+						id: form.id.value,
+						pw: form.pw.value
+					}
+				}).then((res) => { return res.data;
+				}).then((d)=>{
+					alert( form.name.value + "님 회원가입을 축하합니다🐣");
+					form.submit();
+				})
+			}
+		</script>
+
+
+		<style>
+
+			body {
+				margin: 0;
+				height: 100%;
+				background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+				
+				display: flex;
+				align-items: center;
+			}				
+
+
+			.forwave {
+				position: fixed;
+				/* margin-right: -200%; */
+
+				width: 70vw;
+				height: 100vh;
+
+				z-index: -100;
+			}
+			.wave {
+				opacity: 0.4;
+				position: absolute;
+				top: 3%;
+				left: 50%;
+				background: rgb(100, 203, 255);
+
+				/* width: 500px;
+				height: 500px; */
+				width: 300%;
+				height: 300%;
+				margin-left: -250px;
+				margin-top: -250px;
+				transform-origin: 50% 48%;
+				border-radius: 43%;
+				animation: drift 3000ms infinite linear;
+
+				z-index: -50;
+			}
+			.wave.-three {
+				animation: drift 5000ms infinite linear;
+				opacity: 0.3;
+				background: rgb(255, 119, 119);
+			}
+			.wave.-two {
+				animation: drift 7000ms infinite linear;
+				opacity: 0.6;
+				background: aquamarine;
+			}
+			@keyframes drift {
+				from {
+					transform: rotate(0deg);
+				}
+				from {
+					transform: rotate(360deg);
+				}
+			}
+
+			.hero {
+				position: fixed;
+				margin-top: 0px;
+			}
+			.hero *{
+				z-index: 700;
+			}
+
+			.animation-title {
+				color: #fff;
+				z-index: 700;
+
+				font-size: 3.82rem;
+				font-weight: 700;
+				margin:0 0 0.5rem 0;
+				line-height: 1;
+				letter-spacing: 0.1em;
+				font-family: -apple-system,
+				'avenir next', avenir,
+				roboto, noto,
+				'helvetica neue', helvetica,
+				ubuntu,
+				'franklin gothic medium', 'century gothic',
+				sans-serif;
+}
+
+			.wave {
+			animation: moveTheWave 2400ms linear infinite;
+			stroke-dasharray: 0 16 101 16;
+			}
+
+			@keyframes moveTheWave {
+
+				0% {
+					stroke-dashoffset: 0;
+					transform: translate3d(0, 0, 0);
+				}
+
+				100% {
+					stroke-dashoffset: -133;
+					transform: translate3d(-90px, 0, 0);
+				}
+
+			}				
+
+
+
+
+			.box {
+				z-index: 1000;
+				width: 100vw;
+				height: 100vh;
+				border-radius: 30px;
+				text-align: center;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			
+				overflow: hidden;
+				transform: translate3d(0, 0, 0);
+			}
+
+		
+
+			.form-div {
+				right:0;
+				left:0;
+				
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.form-div * {
+
+				padding: 5px;
+				margin: 5px;
+			}
+			fieldset {
+				border-style: hidden;
+			}
+			legend {
+				font-size: small;
+				font-style: italic;
+				color: rgba(0, 86, 70, 0.598);
+			}
+
+
+			input {
+				z-index: 1000;
+				border-radius: 10px;
+				background-color: rgba(0, 0, 0, 0.554);
+			}
+			select {
+				width: 100px;
+				border-radius: 10px;
+				background-color: rgba(0, 0, 0, 0.554);
+				
+			}
+			input:hover {
+				background-color: rgba(127, 255, 212, 0.532);
+			}
+			select:hover {
+				background-color: rgba(127, 255, 212, 0.532);
+			}
+			/* .dropdown-menu {
+				max-height: 100px;
+				overflow: scroll;
+				overflow-x: hidden;
+				margin-top: 0px;
+			} */
+
+			button {
+				position: relative;
+			
+				width: 100px;
+				height: 40px;
+
+				background: linear-gradient(90deg, rgb(38, 242, 174), rgb(232, 255, 139));
+
+				text-align: center;
+				line-height: 20px;
+				border: 2px solid #000;
+				text-decoration: none;
+				color: #000;
+				transition: all 0.3s;
+			}
+			button:after {
+				content: '';
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				width: 100%;
+				height: 100%;
+				border-bottom: 2px solid #000;
+				border-right: 2px solid #000;
+			}
+
+			button:active {
+				top: 5px;
+				left: 5px;
+			}
+			button:active:after {
+				border: 0;
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<div class="forwave">
+			<div class="wave -one"></div>
+			<div class="wave -two"></div>
+			<div class="wave -three"></div>
+		</div>
+
+
+
+		<div class="hero" style="max-height: 700px; padding: 40px; margin: 0px auto; text-align: center;" >
+			<svg width="80" height="60" viewBox="5 0 80 60">
+				<path class="wave" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" $=1$=010.0" />
+			</svg>
+			<h4 class="animation-title">SIGNUP</h4>
+			<svg width="80" height="60" viewBox="5 0 80 60"><path class="wave" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" d="M 0 37.5 c 7.684299348848887 0 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15 s 7.172012725592294 15 15 15 s 7.172012725592294 -15 15 -15" />
+			</svg>
+		</div>
+		
+		
+
+
+		<div class = "box">
+			<div class="form-div">
+				<form action="login" method="get" id="form">
+					<fieldset>
+						<legend>필수</legend>
+						<input type="text" name="name" placeholder="이름" required /><br />
+						<input type="text" name="id" placeholder="아이디" required /><br />
+						<input type="password" name="pw" placeholder="비밀번호" required />
+					</fieldset>
+					<div style="height: 5%;"></div>
+
+					<fieldset>
+						<legend>선택</legend>
+						<input
+							type="tel"
+							name="tel"
+							placeholder="휴대폰번호"
+							required
+						/><br />
+
+						<input
+							type="email"
+							name="email"
+							placeholder="이메일"
+							required
+						/><br />
+
+						<select name="year" class="dropdown-menu">
+							<option selected disabled hidden>년</option>
+							<% for (var i= 2022 ; i>=1980; i--) { %>
+							<option value="<%=i%>"><%=i%></option>
+							<% } %>
+						</select>
+						<select name="month" id="birth-month">
+							<option selected disabled hidden>월</option>
+							<% for (var i= 1 ; i<=12; i++) { %>
+							<option value="<%=i%>"><%=i%></option>
+							<% } %>
+						</select>
+						<select name="date" id="birth-date">
+							<option selected disabled hidden>일</option>
+							<% for (var i= 1 ; i<=31; i++) { %>
+							<option value="<%=i%>"><%=i%></option>
+							<% } %>
+						</select>
+					</fieldset>
+					<div style="height: 5%;"></div>
+
+					<button type="button" onclick="sendForm();" class="button">가입완료</button>
+					<!-- <button type="submit" class="btn4"><span>가입완료</span></button> -->
+				</form>
+			</div>
+		</div>	
+	</body>
+</html>

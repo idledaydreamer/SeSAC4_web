@@ -1,0 +1,146 @@
+<!--* 실습33 - 동적 폼 전송 (Axios)-->
+<html>
+	<head>
+		<title>실습33-Axios</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+
+            function sendForm(){ 
+
+                let form = document.getElementById("form_info");
+                var result = form.checkValidity();
+                if ( !result) {
+                        form.reportValidity();
+                        return false;
+                    }
+
+                axios({
+                    url: 'http://localhost:8000/33user',
+                    method: 'get',
+                    params: {
+                        name: form.name.value,
+                        gender: form.gender.value,
+                        year: form.year.value,
+                        month: form.month.value,
+                        date: form.date.value,
+                        tel: form.tel.value,
+                        color: form.color.value
+                    }
+                }).then((a) => { return a.data; 
+                }).then((d)=> { 
+                    alert( d.name + "님 회원가입을 축하합니다~🦥")
+                    form.submit();
+                })
+            }
+
+        </script>
+
+
+		<style>
+			form {
+				display: block;
+
+				width: 50%;
+				margin: 0 auto;
+
+				text-align: center;
+			}
+			fieldset {
+				background: linear-gradient(45deg, Violet, Orange);
+				border-radius: 20px;
+				border-style: none;
+
+				box-shadow: 3px 3px 3px 2px rgb(106, 124, 109);
+
+				margin-bottom: 25px;
+				padding: 20px;
+
+				display: block;
+				justify-content: center;
+				align-content: center;
+				text-align: center;
+			}
+			fieldset * {
+				margin: 5px;
+			}
+			legend {
+				color: rgb(239, 186, 186);
+				font-size: large;
+				font-weight: bolder;
+				background-color: black;
+				padding: 10px;
+				border-radius: 7px;
+
+				position: relative;
+				top: 8px;
+			}
+			button {
+				padding: 10px;
+				border-radius: 10px;
+				border-style: double;
+			}
+			button:hover {
+				font-weight: bolder;
+				font-size: medium;
+				color: rgb(255, 255, 255);
+				background-color: rgb(218, 108, 108);
+			}
+		</style>
+
+
+	</head>
+
+	<body>
+		<h3>실습33 - 동적 폼 전송</h3>
+		<form id="form_info" action='33user' method='post'>
+			<fieldset>
+				<legend>필수항목</legend>
+				<label>이름 <input type="text" name="name" required /></label>
+				<br />
+
+				성별
+				<label
+					><input type="radio" name="gender" value="남자" required />남자</label
+				>
+				<label
+					><input type="radio" name="gender" value="여자" required />여자</label
+				>
+				<br />
+			</fieldset>
+			<fieldset>
+				<legend>추가항목</legend>
+
+				생년월일
+				<select name="year" id="birth-year">
+					<% for (var i= 1980 ; i<=2022; i++) { %>
+					<option value="<%=i%>"><%=i%></option>
+					<% } %>
+				</select>
+				년
+				<select name="month" id="birth-month">
+					<% for (var i= 1 ; i<=12; i++) { %>
+					<option value="<%=i%>"><%=i%></option>
+					<% } %>
+				</select>
+				월
+				<select name="date" id="birth-date">
+					<% for (var i= 1 ; i<=31; i++) { %>
+					<option value="<%=i%>"><%=i%></option>
+					<% } %>
+				</select>
+				일
+				<br />
+
+
+
+				전화번호 <input type="tel" name="tel" />
+				오늘의 색
+				<input type="color" name="color" />
+
+
+			</fieldset>
+			<br />
+			<button type="button" onclick="sendForm();">회원가입</button>
+		</form>
+	</body>
+</html>
