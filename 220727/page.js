@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 	res.render('signup');
 })
 
-//^ 로그인
+//* 로그인
 app.get('/login', function (req, res) {
 	res.render('login');
 });
@@ -33,7 +33,7 @@ app.post('/signup', function (req, res) {
 });
 
 
-//^ 로그인 - 확인
+//* 로그인 - 확인
 app.post('/login', function (req, res) {
 
 	fs.readFile("info.txt")
