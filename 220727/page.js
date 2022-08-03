@@ -37,23 +37,23 @@ app.post('/signup', function (req, res) {
 app.post('/login', function (req, res) {
 
 	fs.readFile("info.txt")
-    .then( function(data) {
-		data = data.toString().split("//");
-		
-		//필수정보 구조분해할당
-		const { id, pw } = req.body;
-		
-		//필수정보 확인
-		if (data[1] == id && data[2] == pw) {
-			// res.send("로그인 성공");
-			res.send({ "result": true });
-		}
-		else {
-			res.send({ "result": false });
-            //alert("아이디 혹은 비밀번호가 틀렸습니다.");
-        }
-    })
-}) 
+		.then(function (data) {
+			data = data.toString().split("//");
+
+			//필수정보 구조분해할당
+			const { id, pw } = req.body;
+
+			//필수정보 확인
+			if (data[1] == id && data[2] == pw) {
+				// res.send("로그인 성공");
+				res.send({ "result": true });
+			}
+			else {
+				res.send({ "result": false });
+				//alert("아이디 혹은 비밀번호가 틀렸습니다.");
+			}
+		})
+})
 
 const port = 8000;
 app.listen(port, () => {
