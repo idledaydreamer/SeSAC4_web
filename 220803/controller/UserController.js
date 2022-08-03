@@ -1,4 +1,4 @@
-//* 모듈 내보내기
+//* View <-> Controller <- Router 모듈 내보내기
 const { response } = require("express");
 const User = require("../model/User");
 
@@ -13,6 +13,10 @@ exports.register = (req, res) => {
 
 exports.post_register = (req, res) => {
     User.post_user(req.body);
+    User.
+    const { filename } = req.file;
+    res.render('profile', { filename: filename });
+
     res.render('login');
 }
 
@@ -26,7 +30,6 @@ exports.post_login = async (req, res) => {
     const data = await User.get_user(); //User모델에서 get_user() 실행한 결과를 data에 할당
     const info = data.split('\n');
 
-
     for (let i = 0; i < info.length; i++) {
         var check = info[i].split('//', 2);
 
@@ -39,6 +42,11 @@ exports.post_login = async (req, res) => {
         }
     }
 }
+
+exports.profile = (req, res) => {
+    res.render('profile');
+}
+
 
 //* 1. 
 

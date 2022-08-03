@@ -8,11 +8,15 @@ userRouter.get("/", user.index);
 
 //^ /register 접속 시 UserController의 register 함수 실행
 userRouter.get("/register", user.register);
-userRouter.post('/register', user.post_register);
+userRouter.post('/register', upload.single('profile'), user.post_register);
 
 //^ /login 접속 시 UserController의 login 함수 실행
 userRouter.get('/login', user.login);
 userRouter.post('/login', user.post_login);
+
+
+userRouter.get('/profile', user.profile);
+
 
 //^ 경로와 컨트롤러 내의 함수를 연결시켜놓은 내용을 module로 내보낸다.
 module.exports = userRouter;
