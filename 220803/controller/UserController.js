@@ -13,9 +13,9 @@ exports.register = (req, res) => {
 
 exports.post_register = (req, res) => {
     User.post_user(req.body);
-    User.
-    const { filename } = req.file;
-    res.render('profile', { filename: filename });
+    User.for_profile(req.body, req.file);
+
+    // res.render('profile', { filename: filename });
 
     res.render('login');
 }
@@ -24,6 +24,7 @@ exports.post_register = (req, res) => {
 exports.login = (req, res) => {
     res.render('login');
 }
+
 exports.post_login = async (req, res) => {
     const { id, pw } = req.body;
 
@@ -43,7 +44,11 @@ exports.post_login = async (req, res) => {
     }
 }
 
-exports.profile = (req, res) => {
+//profile
+exports.profile = async (req, res) => {
+
+    const file = await User.get_profile();
+
     res.render('profile');
 }
 
