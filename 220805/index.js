@@ -1,5 +1,5 @@
-//* 실행되는 최상위 파일
-//* Express 를 이용해 서버를 실행하는 로직이 담긴다.
+//! 실행되는 최상위 파일
+//! Express 를 이용해 서버를 실행하는 로직이 담긴다.
 const express = require('express');
 const app = express(); //app객체는 서버 생성용
 const port = 8000;

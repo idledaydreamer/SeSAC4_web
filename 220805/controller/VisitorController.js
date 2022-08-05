@@ -18,7 +18,6 @@ exports.get_visitors = (req, res) => {
 
 
 
-//! Router
 exports.post_comment = (req, res) => {
 
     //~ Model - insert()
@@ -28,6 +27,14 @@ exports.post_comment = (req, res) => {
 }
 
 
+
+exports.undo_comment = (req, res) => {
+
+    //~ Model - insert()
+    Visitor.undo(req.body.name, req.body.comment, function (result) {
+        res.send(true);
+    });
+}
 
 
 
