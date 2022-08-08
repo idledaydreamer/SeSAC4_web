@@ -5,7 +5,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
 		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+=======
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+>>>>>>> d5b16dc7b9b6adf5179b687d663106fd678f557f
 	<script>
 		function sendForm() {
 			const form = document.getElementById("form");
@@ -21,11 +25,12 @@
 				data: {
 					name: form.name.value,
 					id: form.id.value,
-					pw: form.pw.value,
+					pw: form.pw.value
 				},
 			})
 				.then((res) => {
 					return res.data;
+<<<<<<< HEAD
 				})
 				.then((d) => {
 					console.log(d);
@@ -34,6 +39,21 @@
 					form.submit();
 				// }).then((d) => {
 				});
+=======
+				}).then((d) =>
+					Swal.fire({
+						icon: "success",
+						title: "회원가입 완료!",
+						text: form.name.value + "님 회원가입을 축하합니다🎉",
+						showConfirmButton: true,
+						confirmButtonText: 'OKAY'
+					}).then((result) => {
+						if (result.isConfirmed) {
+							form.submit();
+						}
+					})
+				)
+>>>>>>> d5b16dc7b9b6adf5179b687d663106fd678f557f
 		}
 	</script>
 
