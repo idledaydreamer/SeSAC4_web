@@ -128,19 +128,16 @@ app.get("/test", function (req, res) {
 
     axios({
         method: "get",
-        url: "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=Su%2FjD4AQWu0vPPnQkcm0dVbiPxWqLgUu6AN6Snk4oK0JGGr38kehRNwGQtPIWP9iZ7BzO%2FQccEWTlb5yAxsUPw%3D%3D&numOfRows=10&pageNo=1&base_date=20220817&base_time=0600&nx=55&ny=127"
+        url: "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=Su%2FjD4AQWu0vPPnQkcm0dVbiPxWqLgUu6AN6Snk4oK0JGGr38kehRNwGQtPIWP9iZ7BzO%2FQccEWTlb5yAxsUPw%3D%3D&numOfRows=10&pageNo=1&dataType=JSON&base_date=20220818&base_time=2000&nx=55&ny=127"
     }).then((result) => {
-        return result.data.response.body;
+        return result.data;
     }).then((data) => {
-        console.log("data : ", data);
-        console.log("items : ", data.items);
-        console.log("items - item : ", data.items.item);
+        // console.log(data);
+        console.log(data.response.body.items);
+        // console.log("items - item : ", data.items.item);
 
-        let items = data.items.item;
-        for (let i = 0; i < items.length; i++) {
-            console.log(items[1]);
-        }
-        res.send(true);
+        let item = data.response.body.items;
+        res.json(item);
     });
 })
 

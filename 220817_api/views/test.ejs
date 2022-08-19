@@ -136,12 +136,8 @@
                     },
                 }).then(function (response) {
                     console.log(response.data);
-                    return result;
                 })
-            } catch (err) { console.log('error!'); }
-
-            return result;
-            console.log('result: ', result);
+            } catch (error) { throw error; }
         }
 
         // locationSuccess

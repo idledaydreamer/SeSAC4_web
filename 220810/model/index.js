@@ -17,7 +17,7 @@ const config = a["develpment"];*/
 const sequelize = new Sequelize(
     config.database,
     config.username,
-    config.password
+    config.password,
     /*
         "sesac",
         "user",
