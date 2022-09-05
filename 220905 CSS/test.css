@@ -1,0 +1,77 @@
+.box {
+    margin-bottom: 50px;
+}
+
+
+@media screen and (max-width: 576px) {
+    .px {
+        width: 40rem;
+        height: 950rem;
+        background-color:pink;
+    }
+    .test {
+        font-size: 10vw;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) { 
+    .px {
+        width: 90%;
+        height: 90em;
+        background-color: salmon;
+    }
+    .test {
+        font-size: 10rem;
+        color: aliceblue;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) { 
+    .px {
+        width: 30em;
+        height: 400px;
+        background-color:aquamarine;
+    }
+    .test {
+        font-size: 30vw;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1200px) { 
+    .px {
+        width: 900px;
+        height: 900px;
+        background-color:rgb(133, 50, 205);
+    }
+    .test {
+        font-size: 90px;
+        color: aliceblue;
+
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) { 
+    .px {
+        width: 60vw;
+        height: 40vh;
+        background-color:rgb(3, 195, 220);
+    }
+    .test {
+        font-size: 10vh;
+    }
+}
+
+
+@media screen and (min-width: 1400px) {
+    .px {
+        width: 30%;
+        height: 80vw;
+        background-color:rgb(244, 211, 47);
+    }
+    .test {
+        font-size: 5vh;
+        color: crimson;
+    }
+}

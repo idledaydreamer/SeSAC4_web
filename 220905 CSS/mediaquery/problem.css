@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+header {
+    background-color: pink;
+    height: 100px;
+}
+ul, ol,fieldset, legend {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+
+    /* 가운데 정렬 */
+    margin: 0 auto;   
+    padding: 0 2rem;
+}
+
+
+/* 헤더 */
+.header-container {
+    width: 100%;
+    height: 100%;
+
+    /* 양끝정렬 */
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.list_menu {
+    display: none;
+}
+.icon_menu {
+    display: block;
+}
+
+
+/* 슬라이드 메뉴 */
+.d-none {
+    display: none !important;   /* CSS 우선순위 */
+}
+.slide_menu {
+    background-color: rgb(158, 252, 43);
+
+    /* 블록화 */
+    display: block;
+    width: 100%;
+
+    /* 앞으로나오게 */
+    position:absolute;
+    z-index: 100;
+}
+.slide_menu_container {
+    /* 줄바꿈정렬 */
+    display: flex;
+    flex-direction: column;
+}
+.slide_menu_container > a {
+    margin: 12px 0;
+}
+
+
+/* 아이유 카드 */
+.card_list {
+    /* border: 3px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.card_wrapper {
+    /* border: 2px solid blue; */
+    width: 50%;
+}
+.card_item {
+    /* border: 1px solid green; */
+    margin: 8px;
+}
+.card_item > img {
+    width: 100%;
+}
+.card_item .desc {
+    display: none;
+}
+
+
+/* breakpoint 1024px */
+@media screen and (min-width:1024px) {
+    body {
+        background-color: lavender;
+    }
+    .inner {
+        max-width: 1024px;
+    }
+
+    .list_menu {
+        display: block ;
+    }
+    .icon_menu {
+        display: none ;
+    }
+
+    .card_wrapper {
+        width: 20%;
+    }
+    .card_item .desc {
+        display: block;
+    }
+}
+
+
