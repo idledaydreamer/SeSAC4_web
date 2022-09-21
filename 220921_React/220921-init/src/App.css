@@ -1,0 +1,64 @@
+.test {
+    background-color: rgb(253, 233, 196);
+    color: orange;
+    font-size: 5rem;
+    margin: 10vw;
+    text-align: center;
+}
+
+.input{
+    margin: 5px;
+    text-align: center;
+    
+}
+
+.color {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.red{
+    background-color: red;
+    width: 10vw;
+    height: 15vh;
+    display:block;
+}
+
+.orange{
+    background-color: orange;
+    width: 10vw;
+    height: 20vh;
+    display:block;
+}
+.yellow{
+    background-color: yellow;
+    width: 10vw;
+    height: 25vh;
+    display:block;
+}
+.green{
+    background-color: green;
+    width: 10vw;
+    height: 30vh;
+    display:block;
+}
+.blue{
+    background-color: blue;
+    width: 10vw;
+    height: 35vh;
+    display:block;
+}
+.navy{
+    background-color: navy;
+    width: 10vw;
+    height: 40vh;
+    display:block;
+}
+.purple{
+    background-color: purple;
+    width: 10vw;
+    height: 45vh;
+    display:block;
+}
