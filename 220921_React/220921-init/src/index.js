@@ -2,7 +2,7 @@
 import React from 'react';  // node_modules디렉터리의 react모듈 불러오기
 import ReactDOM from 'react-dom/client';  // 가장 외부 요소
 // import './index.css';
-import App from './App';    // App 컴포넌트 만들어주기 (함수형)
+// import App from './App';    App 컴포넌트 만들어주기 (함수형)
 import ClassComponent from './ClassComponent';
 // import reportWebVitals from './reportWebVitals';
 
