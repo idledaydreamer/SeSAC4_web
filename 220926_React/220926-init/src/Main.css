@@ -1,0 +1,36 @@
+
+div {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: center;
+    /* text-align: center; */
+}
+
+
+form * {
+    padding: 0.3rem;
+    margin: 1rem;
+}
+
+form:hover{
+    transform: scale(1.05);
+}
+
+#form_write {
+    width: max-content;
+    border: 3px solid rgb(200, 184, 184);
+}
+
+table {
+    width: 40vw;
+
+    border: 2px solid black;
+    border-spacing: 0px;
+    margin:3em;
+
+}
+
+

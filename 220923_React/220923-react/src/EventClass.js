@@ -20,17 +20,6 @@ class EventClass extends Component {
     }
 
 
-    printConsole() {
-        console.log('printConsole')
-        console.log(this);
-    }
-    printConsole2 = () => {
-        console.log('printConsole2')
-        console.log(this);
-    }
-
-
-
     eventChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -51,11 +40,23 @@ class EventClass extends Component {
         }
     }
 
+
+
     aClick = (e) => {
         e.preventDefault(); //윈도우 기본동작 방지
         console.log('aClick');
         console.log(e);
     }
+
+    printConsole() {
+        console.log('printConsole')
+        console.log(this);
+    }
+    printConsole2 = () => {
+        console.log('printConsole2')
+        console.log(this);
+    }
+
 
 
     // this 붙여주기!
@@ -63,8 +64,6 @@ class EventClass extends Component {
         return (
             <div>
                 <h1>EventClass</h1>
-
-
 
                 <input
                     type="text"
@@ -85,6 +84,8 @@ class EventClass extends Component {
 
                 <button onClick={this.eventClick}>클릭</button>
 
+                
+                
                 <p /><a href="#" onClick={this.aClick}>a태그</a>
                 <button onClick={(() => { this.printConsole('2') })}>프린트콘솔1</button>
                 <button onClick={this.printConsole2}>프린트콘솔2</button>
