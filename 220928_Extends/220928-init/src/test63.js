@@ -1,8 +1,7 @@
-import React, { Component, createRef } from "react";
+import React from "react";
 import './Main.css';
 
-class ScrollBox extends Component {
-
+class ScrollBox extends React.Component {
     // clientHeight 현재 보이는 길이
     // scrollHeight 스크롤 전체 길이
 
@@ -19,10 +18,8 @@ class ScrollBox extends Component {
         console.log('scrollTop', this.area.current.scrollTop);
     }
 
-
     scrollChoice = (type) => {
         const { scrollHeight } = this.area.current;
-
         if (type === 1) {
             this.area.current.scrollTop = scrollHeight / 4;
         } else if (type === 2) {
@@ -31,7 +28,6 @@ class ScrollBox extends Component {
             this.area.current.scrollTop = scrollHeight * 3 / 4;
         }
     }
-
 
 
     render() {
@@ -56,3 +52,5 @@ class ScrollBox extends Component {
 }
 
 export default ScrollBox;
+
+
