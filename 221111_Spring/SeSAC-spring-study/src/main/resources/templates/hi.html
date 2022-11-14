@@ -2,11 +2,55 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Thymeleaf 문법</title>
 </head>
 <body>
-<h1 th:text="${text}">hi</h1>
-<p th:text="'안녕하세요. ' + ${msg}">안녕 반가워</p>
+<!-- Thymeleaf 속성에 대한 설명, 기본값 -->
+    <p th:text="'안녕하세요. ' + ${msg}">안녕 반가워</p>
+<!-- text -->
+    <h1 th:text="${text}">hi</h1>
+<!-- html -->
+    <h1 th:utext="${utext}">hi</h1>
+<!-- 속성값 -->
+    <input type="text" th:value = "${text}">
+<!-- 변수 생성  -->
+    <div th:with="temp=${text}"th:text="${temp}"></div>
+<!-- switch-case문 -->
+    <div th:switch="${text}">
+        <p th:case="hi">hi</p>
+        <p th:case="hello">hello</p>
+        <p th:case="*">other</p>
+    </div>
+<!-- 조건문 -->
+    <p th:if="${text}=='web'" th:text="${text}"></p>
+    <p th:unless="${text}=='web'" th:text="'web이 아님'"></p>
+<!-- 반복문 -->
+    <ul>
+        <li th:each="name:${names}">
+            <span th:text="${name}">이름</span>
+        </li>
+    </ul>
+
+<!--실습1. Thymeleaf-->
+    <h3>실습1. Thymeleaf</h3>
+    <p th:if="${age}>=20" th:text="${age}+'세는 성인입니다.'"></p>
+    <p th:unless="${age}>=20" th:text="${age}+'세는 미성년자입니다.'"></p>
+<!--실습2. Thymeleaf 반복문-->
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p:${people}">
+                <td th:text="${p.getName()}"></td>
+                <td th:text="${p.getAge()}"></td>
+            </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
 
