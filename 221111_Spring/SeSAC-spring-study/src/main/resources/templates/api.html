@@ -13,22 +13,9 @@
 
 
 <!--// 실습4. API-POST-->
-<div>
-    <table>
-        <tr>
-            <th>이름</th>
-            <th>성별</th>
-            <th>생년월일</th>
-            <th>관심사</th>
-        </tr>
-        <tr th:each="f: ${ff}">
-            <td th:text="'이름 : ' + ${f.getName()}">이름></td>
-            <td th:text="'성별 : ' + ${f.getAge()}"></td>
-            <td th:text="'생년월일 : ' + ${f.getBirth()}"></td>
-            <td th:text="'관심사 : '+ ${f.getHobby()}"></td>
-        </tr>
-    </table>
-</div>
+
+<h5 th:text="${name}">이름</h5>
+
 <!--<p th:text="'이름 : ' + ${name}">이름</p>-->
 <!--<p th:text="'성별 : ' + ${age}">성별</p>-->
 <!--<p th:text="'생년월일 : ' + ${year}+'-'+${month}+'-'+${day}">생년월일</p>-->
