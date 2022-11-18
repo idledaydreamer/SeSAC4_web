@@ -123,7 +123,7 @@ public class HelloController {
             @RequestParam int year,
             @RequestParam int month,
             @RequestParam int day,
-            @RequestParam ArrayList<String> interest,
+            @RequestParam String interest,  // 배열 형태로 오지만, 전체 문자열로 받음
             Model model
     ) {
         Person p = new Person();

@@ -8,7 +8,7 @@ public class Person {
     private String name;
     private String gender;
     private String birth;
-    private ArrayList<String> interest;
+    private String interest;
 
 
     // getter & setter
@@ -24,7 +24,7 @@ public class Person {
         return birth;
     }
 
-    public ArrayList<String> getInterest() {
+    public String getInterest() {
         return interest;
     }
 
@@ -44,7 +44,7 @@ public class Person {
     }
 
 
-    public void setInterest(ArrayList<String> interest) {
+    public void setInterest(String interest) {
         this.interest = interest;
     }
 
