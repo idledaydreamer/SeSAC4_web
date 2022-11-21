@@ -1,53 +1,28 @@
-
-/* 회원 서비스 요청 RequestDTO 클래스 */
 package SeSAC.spring.study.SeSACspringstudy.dto;
 
+import SeSAC.spring.study.SeSACspringstudy.entity.UserEntity;
 import lombok.*;
 
-import javax.validation.constraints.*;
-import javax.crypto.*;
-import javax.persistence.*;
-
-import SeSAC.spring.study.SeSACspringstudy.domain.User;
-
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
-@Builder
 @Setter
+@NoArgsConstructor      // 기본생성자 자동생성
+@AllArgsConstructor     // 모든 필드를 매개변수로 하는 생성자 자동생성
+@ToString               // DTO 객체의 필드값 출력시 ToString() 메서드 자동생성
 public class UserDTO {
     private Long id;
-
-    @NotBlank(message = "아이디는 필수 입력값입니다.")
-    @Pattern(regexp = "^[a-z0-9]{4,20}$", message = "아이디는 영어 소문자와 숫자만 사용하여 4~20자리여야 합니다.")
+    private String email;
+    private String password;
     private String username;
 
-    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,16}$", message = "비밀번호는 8~16자리수여야 합니다. 영문 대소문자, 숫자, 특수문자를 1개 이상 포함해야 합니다.")
-    private String password;
 
-    @NotBlank(message = "닉네임은 필수 입력값입니다.")
-    @Pattern(regexp = "^[가-힣a-zA-Z0-9]{2,10}$", message = "닉네임은 특수문자를 포함하지 않은 2~10자리여야 합니다.")
-    private String nickname;
-
-    @NotBlank(message = "이메일은 필수 입력값입니다.")
-    @Email(message = "이메일 형식이 올바르지 않습니다.")
-    private String email;
-
-
-    /* 암호화된 password */
-    public void encryptPassword(String BCryptpassword) {
-        this.password = BCryptpassword;
-    }
-
-    /* DTO -> Entity */
-    public User toEntity() {
-        return User.builder()
-                .id(id)
-                .username(username)
-                .password(password)
-                .nickname(nickname)
-                .email(email)
-                .build();
+    // entity -> dto
+    public static UserDTO toUserDTO(UserEntity userEntity) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(userEntity.getId());
+        userDTO.setEmail(userEntity.getEmail());
+        userDTO.setPassword(userEntity.getPassword());
+        userDTO.setUsername(userEntity.getUsername());
+        return userDTO;
     }
 }
 

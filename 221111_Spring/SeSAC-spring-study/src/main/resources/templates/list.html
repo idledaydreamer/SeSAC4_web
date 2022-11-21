@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<h2>User List</h2>
+<table>
+    <tr>
+        <th>id</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>상세조회</th>
+        <th>삭제</th>
+    </tr>
+    <tr th:each="user: ${userList}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.username}"></td>
+        <td>
+            <!--  주소체계
+            query string : /user?id=1
+            rest api (주소만으로 자원 식별) : /user/1  -->
+
+            <!-- Thymeleaf 문법 : 경로상 서버에서 가져온 모델값을 같이 표현하고자 할 때 -->
+            <a th:href="@{|/user/${user.id}|}">조회</a>
+        </td>
+        <td>
+            <!-- 비동기 통신 방식 (axios)으로 rest api 구현 : /user/${user.id} -->
+            <a th:href="@{|/user/delete/${user.id}|}">삭제</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
