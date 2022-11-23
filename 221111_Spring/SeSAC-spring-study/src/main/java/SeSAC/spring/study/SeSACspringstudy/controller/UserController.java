@@ -52,21 +52,26 @@ public class UserController {
     @PostMapping("/user/login")
     public String login(@ModelAttribute UserDTO userDTO, HttpSession session) {
         UserDTO loginResult = userService.login(userDTO);
-        if (loginResult != null) {
-            // login 성공
+        if (loginResult != null) {      // login 성공
             session.setAttribute("loginEmail", loginResult.getEmail());
             return "main";
-        } else {
-            // login 실패
+        } else {                        // login 실패
             return "login";
         }
     }
 
+    // 로그아웃
+    @GetMapping("/user/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "index";
+    }
 
-    // query string : /user?id=1 -> @RequestParam
-    // rest api : /user/1 -> @PathVariable
 
-    // 회원목록 출력하기
+    /* query string : /user?id=1 -> @RequestParam */
+    /* rest api : /user/1 -> @PathVariable */
+
+    // 회원목록 조회
     @GetMapping("/user/")
     public String findAll(Model model) {
 
@@ -79,6 +84,7 @@ public class UserController {
 
     }
 
+
     // 회원정보 상세조회
     @GetMapping("/user/{id}")
     public String findById(@PathVariable Long id, Model model) {
@@ -88,7 +94,7 @@ public class UserController {
     }
 
 
-    // 회원정보 수정하기
+    // 회원정보 수정
     @GetMapping("/user/update")
     public String updateForm(HttpSession session, Model model) {
         String myEmail = (String) session.getAttribute("loginEmail");
@@ -103,12 +109,14 @@ public class UserController {
         return "redirect:/user/" + userDTO.getId();
     }
 
-
+    // 회원탈퇴
     @GetMapping("/user/delete/{id}")
     public String deleteById(@PathVariable Long id) {
         userService.deleteById(id);
         return "redirect:/list/";
     }
+
+
 //    @PostMapping("login")
 //    public String postLogin(@RequestBody String inputID, String inputPW) {
 //

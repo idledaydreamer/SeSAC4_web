@@ -36,15 +36,13 @@ public class UserService {
         if (byEmail.isPresent()) {
             // 조회 결과 존재 (해당 이메일 가진 회원 정보 있음)
             UserEntity userEntity = byEmail.get();      // Optional객체.get() : 그 속의 객체(Entity 객체) 리턴
-            if (userEntity.getPassword().equals(userDTO.getPassword())) {
-                // 비밀번호 일치
-                return UserDTO.toUserDTO(userEntity);   // entity -> dto 1:1 변환
-            } else {
-                // 비밀번호 불일치 (로그인 실패)
+
+            if (userEntity.getPassword().equals(userDTO.getPassword())) {  // 비밀번호 일치
+                return UserDTO.toUserDTO(userEntity); // entity -> dto 1:1 변환
+            } else {    // 비밀번호 불일치 (로그인 실패)
                 return null;
             }
-        } else {
-            // 조회 결과 없음
+        } else {         // 조회 결과 없음
             return null;
         }
 
@@ -82,13 +80,24 @@ public class UserService {
 
 
     public UserDTO updateForm(String myEmail) {
+
+        // Optional : entity -> dto 1:1 변환
         Optional<UserEntity> optionalUserEntity = userRepository.findByEmail(myEmail);
+
+//        if (optionalUserEntity.isPresent()) {
+//            return UserDTO.toUserDTO(optionalUserEntity.get());
+//        } else { return null; }
         return optionalUserEntity.map(UserDTO::toUserDTO).orElse(null);
     }
 
     public void update(UserDTO userDTO) {
         // save() => insert / update
-        userRepository.save(UserEntity.toUpdateUserEntity(userDTO));
+
+        // repository.save() 호출 (조건: entity 객체를 넘겨줘야 함)
+        // 1. dto -> entity 객체로 변환
+        // 2. repository 의 save 메서드 호출
+
+        userRepository.save(UserEntity.toUpdateUserEntity(userDTO));  // JPA 제공 메서드
     }
 
     public void deleteById(Long id) {

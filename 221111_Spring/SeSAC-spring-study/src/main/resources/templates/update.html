@@ -6,7 +6,7 @@
 </head>
 <body>
 <form action="/user/update" method="post">
-    <!--  hidden 속성 : client에게 데이터 노출 안되도록-->
+    <!--  hidden 속성 : client 에 데이터 노출 안되도록-->
     <input type="hidden" th:value="${updateUser.id}" name="id"><br>
     이메일: <input type="text" th:value="${updateUser.email}" name="email" readonly> <br>
     비밀번호: <input type="password" th:value="${updateUser.password}" name="password"> <br>
