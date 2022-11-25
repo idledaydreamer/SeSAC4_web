@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>with_Redux</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <style>
+        div {
+            border: 3px solid black;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="red">
+        <h1>red</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'red'});">red</button>
+    </div>
+    <div id="green">
+        <h1>green</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'green'});">green</button>
+    </div>
+    <div id="yellow">
+        <h1>yellow</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'yellow'});">yellow</button>
+    </div>
+    <div id="blue">
+        <h1>blue</h1>
+        <button type="button" onclick="store.dispatch({type:'CHANGE', color: 'blue'});">yellow</button>
+    </div>
+
+    <script>
+        function reducer(state, action) {
+            // state : 변경 전 현재 상태
+            // action : dispatch를 호출할 때 넣었던 객체 
+            // - type : 상태 변경을 설명하는 정보, - payload : 교체 할 상태 값
+            if (action.type === 'CHANGE') {     // 액션 타입 분석
+                return { color: action.color }; // 새로운 상태로 교체해서 반환
+                // return {color: 'red'};
+            }
+        }
+        var store = Redux.createStore(reducer);
+        // function red(){
+        //     var state = store.getState(); // {color:~~}
+        //     document.querySelector('#red').style.backgroundColor = state.color;
+        // }
+        // function green(){
+        //     var state = store.getState(); // {color:~~}
+        //     document.querySelector('#green').style.backgroundColor = state.color;
+        // }
+        // function yellow(){
+        //     var state = store.getState(); // {color:~~}
+        //     document.querySelector('#yellow').style.backgroundColor = state.color;
+        // }
+        // store.subscribe(red);
+        // store.subscribe(green);
+        // store.subscribe(yellow);
+        function changeAll() {
+            var state = store.getState();
+            document.querySelector('#red').style.backgroundColor = state.color;
+            document.querySelector('#green').style.backgroundColor = state.color;
+            document.querySelector('#yellow').style.backgroundColor = state.color;
+            document.querySelector('#blue').style.backgroundColor = state.color;
+        }
+        store.subscribe(changeAll);
+    </script>
+</body>
+
+
+
+</html>
