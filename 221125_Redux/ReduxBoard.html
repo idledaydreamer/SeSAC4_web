@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redux-Board</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <style>
+        div {
+            border: 3px solid black;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Redux-Board</h3>
+        <form id="form">
+            이름 : <input id="name" type="text" name="name"><br>
+            내용: <input id="content" type="text" name="content">
+            <button type="submit">작성</button>
+        </form>
+        <hr />
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>이름</th>
+                    <th>내용</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"> </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        /* store, reducer 생성 */
+        function reducer(state, action) {
+            if (state == undefined) {    // 처음 불러올 때는 state가 없는 상태
+                return { cnt: 0, boards: [] };  // state 초기값 세팅
+            }
+            else if (action.type == 'create') {
+                // 배열을 풀어서 나열한 것에 data 추가
+                // let boards = Object.assign(state.boards);
+                // boards.push(action.data);
+
+                // let boards = [...state.boards, action.data]; 
+                // return { cnt: state.cnt + 1, boards: boards };
+                return { cnt: state.cnt + 1, boards: [...state.boards, action.data] };
+            } else if (action.type == 'delete') {
+                // filter 해서 number가 같은것만 반환
+                let boards = Object.assign(state.boards);
+                boards = boards.filter(board => board.no !== action.no);
+                return { cnt: state.cnt, boards: boards };
+            }
+        }
+        var store = Redux.createStore(reducer);
+        // reducer는 우리가 외부에 만든 함수기에 store를 생성할 때 어떤 Reducer를 사용할지 인자로 지정해야 dispatch에서 쓸 수 있음.
+
+
+        /* function 지정 */
+        const onSubmit = (e) => {
+            e.preventDefault();
+            var state = store.getState();
+            const form = document.querySelector("form");
+            const data = {
+                no: state.cnt,
+                name: form.name.value,
+                content: form.content.value
+            };
+            store.dispatch({ type: 'create', data: data });
+            form.reset();
+        }
+        form.addEventListener("submit", onSubmit);
+
+
+        /* listener 등록 */
+        function getData() {
+            var state = store.getState(); // 기존 state 가져오기
+            console.log(state);
+
+            var text = "";
+            for (board of state.boards) {
+                text +=
+                    `<tr>
+                            <td>${board.no}</td>
+                            <td>${board.name}</td>
+                            <td>${board.content}</td>
+                            <td>
+                                <button type="button" onclick="store.dispatch({type:'delete',no: ${board.no}});">삭제</button>
+                            </td>
+                        </tr>`;
+            }
+            document.querySelector("#tbody").innerHTML = text;
+        }
+        store.subscribe(getData);
+        // getData();
+
+    </script>
+</body>
+
+</html>
