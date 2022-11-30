@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"; //? store 생성 함수
 import { composeWithDevTools } from "redux-devtools-extension"; //? 리덕스 개발자 도구
 
-
 //? store 생성 
 // 프로젝트 당 하나라 상수const로 선언
 // composeWithDevTools 를 사용하여 리덕스 개발자 도구 활성화

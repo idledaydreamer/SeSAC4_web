@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { Provider } from 'react-redux'; //? react - store 연동 컴포넌트
+import store from './store';
 // import { configureStore } from "@reduxjs/toolkit"; //~ store 생성 함수
 // import { composeWithDevTools } from "redux-devtools-extension"; //~ 리덕스 개발자 도구
 // import rootReducer from "./store/rootReducer";  //& CombineReducers
 // const store = configureStore(rootReducer, composeWithDevTools); 
-import store from './store';
+
 
 
 //? Provider
@@ -28,7 +29,6 @@ import store from './store';
 // 하나의 state 저장
 
 
-
 import App from './App';
 import AppR from './AppR';
 import Bank from './Bank';
@@ -37,8 +37,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
     <Provider store={store}>       {/* props로 store 전달 */}
-      <App />
-      <AppR />
+      {/* <App />
+      <AppR /> */}
       <br />
       <Bank />
     </Provider>

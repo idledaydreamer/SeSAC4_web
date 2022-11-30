@@ -1,7 +1,7 @@
 import { combineReducers } from "redux"; //*
-import bankReducer from "./bankReducer";
 import counterReducer from "./counterReducer";
 import isDataReducer from "./isDataReducer";
+import { bankReducer } from "./bankReducer";
 
 //& combineReducers */
 // 각 reducer 에서 관리되는 state가 key 로 들어감

@@ -1,43 +1,44 @@
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { deposit, withdraw } from '../src/store/bankReducer';
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { deposit, withdraw, reset } from '../src/store/bankReducer';
 
 
-//!  Component에 Redux 적용하기
-// const mapStateToProps = (state) => {
-//     return {
-//         balance: state.balance
-//     };
-// };
-// const mapDispatchToProps = (dispatch) => ({
-//     onDeposit: (cash) => dispatch(deposit(cash)),
-//     onWithdraw: (cash) => dispatch(withdraw(cash))
-// });
-
+//*  react redux hooks : Component에 Redux 적용하기
 
 function Bank() {
-    const balance = useSelector(state => state.balance)
-    const cash = document.getElementById('cash');
+    const balance = useSelector(state => state.balance);
+    const dispatch = useDispatch();
 
-    const Button = () => {
-        const dispatch = useDispatch();
-        return (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <input type="number" id='cash' />
-                <button type="button" value="+" onClick={() => dispatch(deposit(cash))}>입금</button>
-                <button type="button" value="-" onClick={() => dispatch(withdraw(cash))}>출금</button>
-            </div>
-        )
-    }
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div className="Bank">
+            <Balance balance={balance}
+                onDeposit={(cash) => dispatch(deposit(cash))}
+                onWithdraw={(cash) => dispatch(withdraw(cash))}
+                onReset={() => dispatch(reset())}>
+            </Balance>
+        </div >
+    );
+}
+
+
+function Balance({ balance, onDeposit, onWithdraw, onReset }) {
+
+    // Input창 처리
+    const [cash, setCash] = useState('');
+    const onChange = (e) => { setCash(e.target.value); }
+    const onClick = () => { setCash(''); }
+
+    return (
+        <div style={{ textAlign: 'center' }} >
             <h1>코딩온 은행</h1>
             <h3>잔액 : {balance}원</h3>
-            <Button />
+            <input type="number" name='cash' id="cash" onChange={onChange} value={cash} onClick={onClick} />
+            <button onClick={() => (onDeposit(document.getElementById('cash').value))}>입금</button>
+            <button onClick={() => (onWithdraw(document.getElementById('cash').value))}>출금</button>
+            <button onClick={() => (onReset())}>초기화</button>
         </div>
     );
 }
 
 
-export default connect()(Bank);
-
-// export default Bank;
+export default Bank;
