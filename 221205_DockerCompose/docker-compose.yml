@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  # 새롭게 정의한 image 기반 컨테이너
+  # sesac-codingon:
+  #   volumes: 
+  #     - /app/node_modules
+  #     - ./:/app/
+  #   # 도커파일 경로 
+  #   build: 
+  #     context: ./
+  #   # 포트바인딩 
+  #   ports: (미지정시 호스트포트 랜덤지정)
+  #     - "8000:8000"
+
+
+  backend: 
+    build:
+        context: ./backend
+    volumes: 
+      - ./backend:/app/
+      - /app/node_modules
+    container_name: backend
+    ports:
+      - "8001:8000"
+      
+  frontend:
+    build:
+      context: ./frontend
+    volumes: 
+      - ./frontend:/app/
+      - /app/node_modules
+    container_name: frontend
+    ports:
+      - "3001:3000"
+

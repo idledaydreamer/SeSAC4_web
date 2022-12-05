@@ -1,0 +1,14 @@
+//* 컴파일 설정 */
+// tsconfig.json | tsc -- init
+
+//TODO /*   ES 버전 히스토리    */
+// ES3 -> ES5 -> ES6(ES2015) -> ES7(ES2016) -> ES8(ES2017)
+
+{
+    "compilerOptions": {
+        "module": "CommonJS",   // import 문법 (import | require)
+        "target": "ES6"         // 실행환경 정의
+    },
+    "include": ["*.ts"],        // 컴파일 포함
+    "exclude": ["node_nodules"] // 컴파일 제외
+}

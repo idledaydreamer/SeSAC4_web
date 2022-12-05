@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
 	res.send(req.query.name);
 });
 app.get('/select', (req, res) => {
-	res.send('select page22222');
+	res.send('select page22');
 });
 
 app.listen(8000, () => {
