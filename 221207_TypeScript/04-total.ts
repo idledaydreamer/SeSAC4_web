@@ -1,8 +1,7 @@
 //*     ts 실행     *//
 
-//^ 1. tsc      
-// (타깃변경: - t es5 )
-//^ 2. ts-node 
+// 1. tsc (타깃변경: - t es5 )
+// 2. ts-node 
 
 var ts = 1;
 
