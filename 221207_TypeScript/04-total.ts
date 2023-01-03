@@ -159,7 +159,7 @@ console.log(dev2.getName());
 
 
 //^ 제네릭 ( Generics )
-// 재사용성, 여러 타입 동작하는 걸 만들때 
+// 재사용성, 여러 타입 동작 
 // Any 보다 제네릭을 쓰자!
 
 // Array<number> = number[]   |   Array<>
