@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'; // react - store 연동 컴포넌트
 
 const store = configureStore({ reducer: rootReducer });
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
